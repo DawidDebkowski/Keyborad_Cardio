@@ -13,8 +13,9 @@
 .key {
     width: 120px;
 	height: 120px;
-	background-color: #F34A53;
+	background-color:	#00CED1;
 	border-radius: 100%;
     margin: 40px auto 0;
     font-size: 100px;
+    text-align: center;
 }
