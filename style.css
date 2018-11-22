@@ -1,8 +1,9 @@
 .container {
+    text-align: center;
 }
 
 .keyboard {
-    
+    text-align: center;
 }
 
 .keys {
@@ -11,11 +12,13 @@
 }
 
 .key {
-    width: 120px;
-	height: 120px;
+    width: 60px;
+	height: 60px;
 	background-color:	#00CED1;
 	border-radius: 100%;
     margin: 40px auto 0;
-    font-size: 100px;
+    font-size: 50px;
     text-align: center;
+    padding: 10px 10px 10px 10px;
+    border: 5px solid #0000CD;
 }
