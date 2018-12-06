@@ -22,3 +22,28 @@
     padding: 10px 10px 10px 10px;
     border: 5px solid #0000CD;
 }
+.key#space {
+    width: 500px;
+    color: crimson;
+    
+    }
+    body {
+    background:url(https://www.publicdomainpictures.net/pictures/130000/nahled/black-and-white-weaving-background.jpg);
+    font-family: 'VT323', monospace;
+    }
+    .container {
+    color: red;
+    font-size: 30px;
+    }
+    .correct-key-down {
+    background-color: lawngreen;
+    
+    }
+    .wrong-key-down {
+    background-color: black;
+    color: white;
+    
+    }
+    .fire-key {
+    background-color: darkorange;
+    }
