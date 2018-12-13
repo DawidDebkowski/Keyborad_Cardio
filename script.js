@@ -1,6 +1,6 @@
 const buttonsKey = document.getElementsByClassName('key');
 let lastKey;
-let onOffGame = false;
+let offGame = false;
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -26,11 +26,18 @@ function peep(){
     const key = getRandomKey();
     key.classList.add("fire-key");
     setTimeout( () => {
-        peep()
+        key.classList.remove("fire-key");
+        if (!offGame){
+            peep();
+        }
     } , time);
+}
+
+function endGame() {
+    offGame = true;
 }
 /*console.log(getRandomKey());
 function addClass() {
-    getRandomKey().className="fire-key";
+    getRandomKey().className=fire-key";
 };
 addClass(); */
