@@ -35,9 +35,9 @@ function peep(){
 
 function endGame() {
     offGame = true;
-}
-/*console.log(getRandomKey());
-function addClass() {
-    getRandomKey().className=fire-key";
 };
-addClass(); */
+
+function startGame() {
+    offGame = false;
+    peep();
+}
