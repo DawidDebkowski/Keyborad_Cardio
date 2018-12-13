@@ -1,5 +1,6 @@
 const buttonsKey = document.getElementsByClassName('key');
 let lastKey;
+let onOffGame = false;
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -17,10 +18,19 @@ function getRandomKey() {
 };
 
 
-console.log(getRandomKey())
-
-// do domu napisz funkcję która losowo dodaje do klawisza klasę fire-key
+console.log(getRandomKey());
 
 
-
-
+function peep(){
+    const time = getRandomNumber(1000, 2000);
+    const key = getRandomKey();
+    key.classList.add("fire-key");
+    setTimeout( () => {
+        peep()
+    } , time);
+}
+/*console.log(getRandomKey());
+function addClass() {
+    getRandomKey().className="fire-key";
+};
+addClass(); */
