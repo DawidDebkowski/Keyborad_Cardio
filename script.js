@@ -3,6 +3,7 @@ let lastKey;
 let currentKey;
 let offGame = false;
 let score;
+let endScore = 2;
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -67,5 +68,9 @@ function checkKey(e) {
         score --;
         console.log(score)
     };
+    if (score = endScore) {
+        endGame()
+    };
+
 };
 
