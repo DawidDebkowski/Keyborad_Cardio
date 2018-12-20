@@ -26,25 +26,25 @@
     width: 500px;
     color: crimson;
     
-    }
-    body {
+}
+body {
     background:url(https://www.publicdomainpictures.net/pictures/260000/nahled/abstract-background-dark-blue.jpg);
     font-family: 'VT323', monospace;
-    }
-    .container {
+}
+.container {
     color: red;
     font-size: 30px;
-    }
-    .correct-key-down {
+ }
+.correct-key-down {
     background-color: lawngreen;
     
-    }
-    .wrong-key-down {
-    background-color: black;
+}
+.wrong-key-down {
+    background-color: red;
     color: white;
     
-    }
-    .fire-key {
+}
+.fire-key {
     background-color: darkorange;
     width: 60px;
 	height: 60px;
@@ -54,4 +54,4 @@
     text-align: center;
     padding: 10px 10px 10px 10px;
     border: 5px solid #0000CD;
-    }
+}
