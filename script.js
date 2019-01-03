@@ -27,8 +27,6 @@ function peep() {
     addClassToElement('fire-key', key);
     currentKey = key;
     setTimeout(() => {
-        key.classList.remove('fire-key');
-        
         if (!OffGame) peep();
     }, time);
 
@@ -40,8 +38,11 @@ function endGame() {
 
 function addClassToElement(clasName, element) {
     element.classList.add(clasName);
-}
-
+    const time = getRandomNumber(1000, 2000);
+    setTimeout(() => {
+        removeClassFromElement(clasName, element);
+    }, time);
+};
 function removeClassFromElement(clasName, element) {
     element.classList.remove(clasName);
 }
