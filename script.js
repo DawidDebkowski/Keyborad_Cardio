@@ -1,9 +1,9 @@
 const buttonsKey = document.getElementsByClassName('key');
 let lastKey;
 let currentKey;
-let offGame = false;
 let score;
 let endScore = 2;
+let OffGame = false;
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -20,78 +20,60 @@ function getRandomKey() {
     return key;
 };
 
-function showScore() {
-    menu = document.querySelector(".game-menu");
-    menu.innerHTML =`<div class="scoreBoard">Score: ${score}<div>`;
-}
 
-console.log(getRandomKey());
-
-function checkKey(event) {
-    if (event.keyCode == currentKey.attributes[0].value){
-        return true;
-        console.log("ok")
-    }
-    else {
-        return false
-    };
-};
-
-function peep(){
+function peep() {
     const time = getRandomNumber(1000, 2000);
     const key = getRandomKey();
+    key.classList.add('fire-key');
     currentKey = key;
-    addClassToElement("key", currentKey)
-    key.classList.add("fire-key");
-    setTimeout( () => {
-        key.classList.remove("fire-key");
-        if (!offGame){
-            peep();
-        }
-    } , time);
-}
+    // console.log(currentKey.attributes[0].value)
+    setTimeout(() => {
+        key.classList.remove('fire-key');
+        if (!OffGame) peep();
+    }, time);
+};
 
 function endGame() {
-    offGame = true;
+    OffGame = true;
 };
 
-function addClassToElement(classname, element) {
-    element.classList.add(classname)
-}
-removeClassToElement(clasName, element) {
-    // homework
-}
+// addClassToElement(clasName, element) {
+//     // Homework 
+// }
 
+// removeClassToElement(clasName, element) {
+//     // net step
+// }
+
+
+function showScore() {
+    menu = document.querySelector('.game-menu');
+    // console.log(menu);
+    menu.innerHTML = `<div class="scoreBoard">Score: ${score}</div>`; 
+}
 
 function startGame() {
-    window.addEventListener("keydown" , checkKey)
     score = 0;
     showScore();
+    window.addEventListener('keydown', checkKey)
     peep();
-    offGame = false;
-    scoreBoard = document.querySelector(".scoreboard")
+    OffGame = false;
+    scoreBoard = document.querySelector('.scoreBoard')
 };
 
-function checkKey(e) {
-    if (event.keyCode == currentKey.attributes[0].value){
+function checkKey(event) {
+    if (event.keyCode == currentKey.attributes[0].value) {
         score ++;
+        // addClassToElement('.correct-key-down', currentKey);
         console.log(score);
-        addClassToElement("correct-key-down", currentKey);
-    }
-    else {
+    } else {
         score --;
-        let wrongKey = document.querySelector(`div[data-key="${e.keyCode}"]`);
+        let wrongKey = document.querySelector(`div[data-key="${event.keyCode}"]`);
+        // addClassToElement('.wrong-key-down', wrongKey);
         console.log(score);
-        addClassToElement("wrong-key-down", wrongKey);
-    };
-    score.innerHTML = `Score: ${score}`;
+    }
+    scoreBoard.innerHTML = `Score: ${score}`;
     if (score == endScore) {
-        endGame();
-    };
-};
-function addClassToElement(classname, element) {
-    element.classList.add(classname)
-}
-removeClassToElement(clasName, element) {
-    // homework
+        endGame()
+    }
 }
